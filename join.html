@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join The Magic</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="houses-hero">
+    <nav class="navbar">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="houses.html">Houses</a></li>
+        <li><a href="explore.html">Explore</a></li>
+        <li><a href="join.html">Join</a></li>
+    </ul>
+    </nav>
+    </header>
+    <div class="join-page">
+        <h1 class="join-title">Ready to Join the Magic?</h1>
+    <p class="join-description">
+        Whether you're brave like Gryffindor, wise like Ravenclaw, loyal like Hufflepuff, or ambitious like Slytherin,
+        there's a place for you at Hogwarts. 🌟
+    </p>
+    <form class="join-form" id="joinForm">
+        <input type="text" id="nameInput" placeholder="Your Name" required />
+        <select id="houseSelect" required>
+        <option value="">Select Your House</option>
+        <option value="Gryffindor">Gryffindor 🦁</option>
+        <option value="Ravenclaw">Ravenclaw 🦅</option>
+        <option value="Hufflepuff">Hufflepuff 🦡</option>
+        <option value="Slytherin">Slytherin 🐍</option>
+        </select>
+        <button type="submit">Join the Magic ✨</button>
+    </form>
+    <div id="welcomeMessage" class="welcome-message"></div>
+    </div>
+    <script>
+    document.getElementById("joinForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        const name = document.getElementById("nameInput").value;
+        const house = document.getElementById("houseSelect").value;
+        const welcome = document.getElementById("welcomeMessage");
+        welcome.innerHTML = `Welcome to <span style="color:#4b0082">${house}</span>, <strong>${name}</strong>!`;
+        welcome.classList.add("show");});
+    </script>
+    <footer class="site-footer">
+    <p>Made with 💙 by Malak | A tribute to the magical world of Harry Potter ✨</p>
+</footer>
+</body>
+</html>
